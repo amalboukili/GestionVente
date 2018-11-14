@@ -9,6 +9,9 @@ public class ArticleTest {
 	art.setQuantité(3);
 	System.out.println("Article : " +art.getTitre()+ "\t le prix est de : " +art.getPrix()+ "\t La quantité :" +art.getQuantité());
 
+	art.stockerProduit("Kit");
+	art.getProduis();
+
 	}
 
 	
