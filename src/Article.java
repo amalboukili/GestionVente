@@ -40,6 +40,21 @@ public class Article{
 	}
 	
 	
+	//Class interne produit
+	class Produit{
+		private String titre;
+		
+		public Produit(String titre) {
+			this.titre=titre;
+		}
+		
+		public String getTitre() {
+			return titre;
+		}
+		public void setTitre(String titre) {
+			this.titre=titre;
+		}
+	}
 	
 	
 	
