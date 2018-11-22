@@ -31,7 +31,7 @@ public class ArticleTest  {
 	ArticlesVendus.add(art);
 	
 	//Exporter une liste des articles au format CSV
-	/*try {
+	try{
 		
 		FileWriter fw= new FileWriter(f, true);
 		BufferedWriter bw= new BufferedWriter(fw);
@@ -48,16 +48,16 @@ public class ArticleTest  {
 	
 	
 		}
-	*/
+	
 	
 	//le rechargement depuis le fichier csv
 	ArrayList<Article> ArDVendus= new ArrayList<Article>();
 		
 	try {
 		FileReader fr=new FileReader(f);
-		BufferedReader bw = new BufferedReader(fr);
+		BufferedReader br = new BufferedReader(fr);
 		
-		String line=bw.readLine();
+		String line=br.readLine();
 		while(line !=null) {
 			String [] splitArray = line.split(",");
 			String titre= splitArray[0];
@@ -65,16 +65,19 @@ public class ArticleTest  {
 			int quantite = Integer.valueOf(splitArray[2]);
 			Article articles= new Article(titre, prix, quantite);
 			ArDVendus.add(articles);
-			line=bw.readLine();
+			line=br.readLine();
 			
 			
-			for(Article coucou :ArDVendus) {
+			for(Article article :ArDVendus) {
 				
-				System.out.println(coucou.getTitre() +" , "+ coucou.getPrix() + " , " +coucou.getQuantité());
+				System.out.println(article.getTitre() +" , "+ article.getPrix() + " , " +article.getQuantité());
 				
 			}
 					
 		}
+		
+		br.close();
+		fr.close();
 		
 	}catch (IOException exception) {
 		System.out.println("Erreur lors de lecture : "+exception.getMessage());
