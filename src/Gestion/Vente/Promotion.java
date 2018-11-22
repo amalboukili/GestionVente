@@ -1,3 +1,4 @@
+package Gestion.Vente;
 
 public enum Promotion {
 	ETE(0.9,"ETE"),
